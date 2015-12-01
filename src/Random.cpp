@@ -1,6 +1,8 @@
-#include "../include/Random.hpp"
+#include "Random.hpp"
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
+
 
 Random::Random (int i) {srand ((int)(time(NULL)+i)); }
 

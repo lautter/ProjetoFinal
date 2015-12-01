@@ -6,6 +6,7 @@
 #include "Pilha.hpp"
 #include "Lista.hpp"
 
+
 class Buffer : public sf::RectangleShape
 {
     public:

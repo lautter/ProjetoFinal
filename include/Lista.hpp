@@ -1,6 +1,10 @@
 #ifndef LISTA_HPP
 #define LISTA_HPP
 #include <iostream>
+#include <list>
+#define Lista std::list
+
+#ifdef LISTA
 template<typename T>
 class Lista{
 	public:
@@ -166,5 +170,5 @@ T Lista<T>::getItem(int j){
         tmp=tmp->next;
     return tmp->data;
 }
-
+#endif // LISTA
 #endif

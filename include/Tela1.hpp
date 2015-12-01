@@ -7,7 +7,7 @@
 #include "Random.hpp"
 
 #include <iostream>
-#include <list>
+
 #include "Pilha.hpp"
 #include "Lista.hpp"
 
@@ -32,6 +32,9 @@ class Tela1:public cScreen
 
         void setqVidas(int _vidas);
         int getqVidas(void) const;
+
+        std::string to_string(int i);
+
     protected:
     private:
         int fase;

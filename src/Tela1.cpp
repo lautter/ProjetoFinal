@@ -1,4 +1,6 @@
 #include "Tela1.hpp"
+#include <iostream>
+#include <string>
 
 Tela1::Tela1(int _fase)
 {
@@ -47,12 +49,12 @@ Tela1::Tela1(int _fase)
 
     pont.setFont(font);
     pont.setColor(sf::Color(0,0,0));
-    pont.setString("Pontos: "+std::to_string(pontos));
+    pont.setString("Pontos: "+to_string(pontos));
     pont.setPosition(950,10);
 
     sizePilha.setFont(font);
     sizePilha.setColor(sf::Color(0,0,0));
-    sizePilha.setString(std::to_string(pilha.size()));
+    sizePilha.setString(to_string(pilha.size()));
     sizePilha.setPosition(750,10);
 
     topPilha.setSize(sf::Vector2f(20,20));
@@ -191,32 +193,31 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
             else break;
         }
         //Evento dos blocos
-        for(int j;j<Blocos.size();j++){
-            Bloco i=Blocos.getItem(j);
-            if(i.getGlobalBounds().intersects(bola.getGlobalBounds())){
-                if(bola.getPosition().y>i.getPosition().y&&bola.getPosition().y<i.getPosition().y+35){
-                    speed.x*=-1;
-                    }
-                else
-                    speed.y*=-1;
+        for(Lista<Bloco>::iterator i=Blocos.begin();i!=Blocos.end();i++){
+             if(i->getGlobalBounds().intersects(bola.getGlobalBounds())){
+                 if(bola.getPosition().y>i->getPosition().y&&bola.getPosition().y<i->getPosition().y+35){
+                     speed.x*=-1;
+                     }
+                 else
+                     speed.y*=-1;
 
-                --(i);
-                //Olhar essa parte
-                ///Mesmo sem quebrar o bloco, a pilha é alterada
-                if(!pilha.empty()){
-                    if(i.getFillColor()==pilha.top())
-                        pilha.pop();
-                    else
-                        pilha.push(i.getFillColor());
-                }else{
-                    preenchePilha(arrayColors);
-                    pontos+=bonusPilha*MULTIPLICADOR;
-                }
-                if(i.getLife()==0){
-                    pontos+=10*i.getType();
-                    Blocos.erase(i);
-                }
-            }
+                 --(*i);
+                 //Olhar essa parte
+                 ///Mesmo sem quebrar o bloco, a pilha é alterada
+                 if(!pilha.empty()){
+                     if(i->getFillColor()==pilha.top())
+                         pilha.pop();
+                     else
+                         pilha.push(i->getFillColor());
+                 }else{
+                     preenchePilha(arrayColors);
+                     pontos+=bonusPilha*MULTIPLICADOR;
+                 }
+                 if(i->getLife()==0){
+                     pontos+=10*i->getType();
+                     i=Blocos.erase(i);
+                 }
+             }
         }
 
         // ------------ Desenho
@@ -229,10 +230,10 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
         App.draw(bordaS);
         App.draw(bola);
 
-        pont.setString("Pontos: "+std::to_string(pontos));
+        pont.setString("Pontos: "+to_string(pontos));
         App.draw(pont);
 
-        sizePilha.setString(std::to_string(pilha.size()));
+        sizePilha.setString(to_string(pilha.size()));
         App.draw(sizePilha);
 
         if(!pilha.empty())
@@ -241,16 +242,12 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
             preenchePilha(arrayColors);
         App.draw(topPilha);
 
-        for(int j;j<Vidas.size();j++){
-            sf::RectangleShape i=Vidas.getItem(j);
-            App.draw(i);
-        }
+        for(std::list<sf::RectangleShape>::iterator i=Vidas.begin();i!=Vidas.end();i++)
+             App.draw(*i);
 
-        //Desenhando blocos
-        for(int j;j<Blocos.size();j++){
-            Bloco i=Blocos.getItem(j);
-            App.draw(i);
-        }
+         //Desenhando blocos
+         for(std::list<Bloco>::iterator i=Blocos.begin();i!=Blocos.end();i++)
+             App.draw(*i);
 
 
         App.display();
@@ -362,12 +359,12 @@ void Tela1::limpar(void){
 
     pont.setFont(font);
     pont.setColor(sf::Color(0,0,0));
-    pont.setString("Pontos: "+std::to_string(pontos));
+    pont.setString("Pontos: "+to_string(pontos));
     pont.setPosition(950,10);
 
     sizePilha.setFont(font);
     sizePilha.setColor(sf::Color(0,0,0));
-    sizePilha.setString(std::to_string(pilha.size()));
+    sizePilha.setString(to_string(pilha.size()));
     sizePilha.setPosition(750,10);
 
     topPilha.setSize(sf::Vector2f(20,20));
@@ -376,5 +373,9 @@ void Tela1::limpar(void){
     pilha.clear();
     Blocos.clear();
     Vidas.clear();
-
+}
+std::string Tela1::to_string(int i){
+    std::string a="";
+    a+=i;
+    return a;
 }

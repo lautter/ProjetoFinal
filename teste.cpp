@@ -29,8 +29,16 @@ int main(int argc, char** argv)
 
     Menu menu(largura,altura);
     Tela1 tela1;
+    Tela1 tela2(1);
+    Tela1 tela3(2);
+    Tela1 tela4(3);
+    Tela1 tela5(4);
     Screens.push_back(&menu);
     Screens.push_back(&tela1);
+    Screens.push_back(&tela2);
+    Screens.push_back(&tela3);
+    Screens.push_back(&tela4);
+    Screens.push_back(&tela5);
 
     for(int i=0;i>=0;i=Screens[i]->Run(App,lifes,pontos));
 
