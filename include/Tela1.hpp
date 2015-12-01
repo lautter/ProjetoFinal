@@ -11,7 +11,7 @@
 //#include <stack>
 //#define Pilha std::stack
 #include "Pilha.hpp"
-#define Lista std::list
+#include "Lista.hpp"
 
 #include "Bloco.hpp"
 

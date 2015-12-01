@@ -536,7 +536,7 @@
 1448969957 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/src/Tela1.cpp
 	"Tela1.hpp"
 
-1448969219 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/Tela1.hpp
+1448991838 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/Tela1.hpp
 	"cScreen.hpp"
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
@@ -544,6 +544,7 @@
 	<iostream>
 	<list>
 	"Pilha.hpp"
+	"Lista.hpp"
 	"Bloco.hpp"
 
 1448958912 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/src/Bloco.cpp
@@ -553,11 +554,12 @@
 	<SFML/Graphics.hpp>
 	"Buffer.hpp"
 
-1448965962 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/Buffer.hpp
+1448991764 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/Buffer.hpp
 	<SFML/Graphics.hpp>
 	"Pilha.hpp"
+	"Lista.hpp"
 
-1448918672 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/src/Buffer.cpp
+1448991825 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/src/Buffer.cpp
 	"Buffer.hpp"
 
 1448969508 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/Pilha.hpp
@@ -575,5 +577,8 @@
 	"Pilha.hpp"
 
 1448966339 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/include/Pilha.hpp
+	<iostream>
+
+1448991677 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/Lista.hpp
 	<iostream>
 
