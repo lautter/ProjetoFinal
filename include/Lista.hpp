@@ -18,6 +18,10 @@ class Lista{
 		~Lista();
 		void push_back(T data);
 		void push_front(T data);
+
+		void pop_back(T data);
+		void pop_front(T data);
+
 		int size(void);
 		bool erase(T data);
 		bool search(T data);
