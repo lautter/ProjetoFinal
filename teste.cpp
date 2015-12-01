@@ -8,6 +8,7 @@
 #include <vector>
 #define altura 720
 #define largura 1200
+
 int main(int argc, char** argv)
 {
     //Applications variables
@@ -29,3 +30,4 @@ int main(int argc, char** argv)
 
     return EXIT_SUCCESS;
 }
+

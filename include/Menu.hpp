@@ -21,6 +21,11 @@ class Menu: public cScreen
          * @brief Roda os componentes correspondentes a essa classe na janela
         */
         virtual int Run(sf::RenderWindow &App);
+        /**
+         * @brief Roda o código do construtor
+        */
+        void limpar(void);
+
     private:
         int selectedItem; //!<Guarda o item do menu selecionado
         sf::Font font; //!<Atributo que guarda informações sobre a fonte que será usada na classe

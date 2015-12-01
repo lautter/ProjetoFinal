@@ -5,7 +5,6 @@
 class cScreen
 {
     public:
-        /** Default constructor */
         virtual int Run(sf::RenderWindow &App)=0;
 };
 

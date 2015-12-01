@@ -50,6 +50,7 @@ void Menu::moveDown(void){
 
 
 int Menu::Run(sf::RenderWindow &App){
+    limpar();
     sf::Event evento;
     while(App.isOpen()){
         App.clear();
@@ -69,7 +70,7 @@ int Menu::Run(sf::RenderWindow &App){
                             break;
                         case sf::Keyboard::Return:
                             switch(selectedItem){
-                                case 0: std::cout<<"NOADS"<<std::endl; return 1; break;
+                                case 0: return 1; break;
                                 case 1: return 2; break;
                                 case 2: return -1; break;
                             }break;
@@ -84,3 +85,21 @@ int Menu::Run(sf::RenderWindow &App){
     }return -1;
 }
 
+void Menu::limpar(void){
+    selectedItem=0;
+
+    //Build the Play Option
+    menu[0].setFont(font);
+    menu[0].setColor(sf::Color::Red);
+    menu[0].setString("Play");
+
+    //Build the Ranking Option
+    menu[1].setFont(font);
+    menu[1].setColor(sf::Color::White);
+    menu[1].setString("Best Scores");
+
+    //Build the Exit Option
+    menu[2].setFont(font);
+    menu[2].setColor(sf::Color::White);
+    menu[2].setString("Exit");
+}

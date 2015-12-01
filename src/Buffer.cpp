@@ -13,3 +13,6 @@ Buffer::~Buffer()
 void Buffer::print(void){
     this->setPosition(this->getPosition().x,this->getPosition().y+speed.y);
 }
+void Buffer::evento(sf::RenderWindow &Apps, sf::RectangleShape &sabre,sf::CircleShape &bola,Pilha<sf::RectangleShape> &Vidas){
+    type==0;
+}

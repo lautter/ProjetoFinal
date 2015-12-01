@@ -8,8 +8,9 @@
 
 #include <iostream>
 #include <list>
-#include <stack>
-#define Pilha std::stack
+//#include <stack>
+//#define Pilha std::stack
+#include "Pilha.hpp"
 #define Lista std::list
 
 #include "Bloco.hpp"
@@ -29,11 +30,13 @@ class Tela1:public cScreen
         void preenchePilha(sf::Color *arrayColors);
         void preencheBlocos(sf::Color *arrayColors);
         void preencheVidas(void);
+        void limpar(void);
 
         void setqVidas(int _vidas);
         int getqVidas(void) const;
     protected:
     private:
+        int fase;
         int qVidas; //!< @brief As vidas que o jogador possui(começa com 3)
         int pontos; //!< @brief Os pontos atuais do jogador
         int bLife; //!< @brief A quantidade de vidas de um bloco

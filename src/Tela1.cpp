@@ -1,7 +1,8 @@
 #include "Tela1.hpp"
 
-Tela1::Tela1(int fase)
+Tela1::Tela1(int _fase)
 {
+    fase=_fase;
     qPilha=4+fase*2;
     qVidas=3;
     pontos=0;
@@ -64,6 +65,7 @@ Tela1::~Tela1()
 
 
 int Tela1::Run(sf::RenderWindow &App){
+    limpar();
     #define MULTIPLICADOR 100
     //posicao inicial do mouse em relacao a janela
     sf::Mouse::setPosition(sf::Vector2i(300, 250),App);
@@ -102,7 +104,6 @@ int Tela1::Run(sf::RenderWindow &App){
         //se o sabre não colidiu com as bordas segue o ponteiro do mouse
         if(!colidiuE && !colidiuD){
             lightsaber.setPosition(posMouseApp.x+50,670);
-            //lightsaber.setPosition(50,670);
         }
         // se o sabre colide com a borda direita
         if(lightsaber.getPosition().x<50+100)/*borda+sabre*/
@@ -247,16 +248,22 @@ int Tela1::Run(sf::RenderWindow &App){
 
         App.display();
         if(Blocos.empty()){
-            break;
+            return 2;
         }
     }
 
     ///////////////////////////////////////////////////////////////////
     sf::Text text;
     text.setFont(font);
-    text.setColor(sf::Color::Red);
-    text.setString("Play");
-    text.setPosition(sf::Vector2f(1200/2,720/2));
+    text.setColor(sf::Color::White);
+    text.setString("GAME OVER!!");
+    text.setPosition(sf::Vector2f(1200/2-100,720/2-20));
+
+    sf::Text text2;
+    text2.setFont(font);
+    text2.setColor(sf::Color::Red);
+    text2.setString("PLAY AGAIN?");
+    text2.setPosition(sf::Vector2f(1200/2-100,720/2+20));
 
     while(App.isOpen()){
         sf::Event event;
@@ -264,20 +271,17 @@ int Tela1::Run(sf::RenderWindow &App){
         {
             if (event.type == sf::Event::Closed)
                 App.close();
-            if (event.type == sf::Event::KeyPressed)
+            if (event.type == sf::Event::KeyReleased)
             {
-                if (event.key.code == sf::Keyboard::Space){
-                    break;
+                if (event.key.code == sf::Keyboard::Return){
+                    return 0;
                 }
-
-            }if(event.type==sf::Event::MouseButtonPressed)
-                if(event.mouseButton.button==sf::Mouse::Left){
-                    break;
-                }
+            }
         }
         App.clear();
         App.draw(background);
         App.draw(text);
+        App.draw(text2);
         App.draw(bordaE);
         App.draw(bordaD);
         App.draw(bordaS);
@@ -323,4 +327,47 @@ void Tela1::setqVidas(int _vidas){
 }
 int Tela1::getqVidas(void) const{
     return qVidas;
+}
+
+void Tela1::limpar(void){
+    qPilha=3+fase*2;
+    qVidas=3;
+    pontos=0;
+    bLife=1+fase;
+    mColor=4+fase;
+    bonusPilha=1;
+    qBlocos=7;
+
+    bordaE.setSize(sf::Vector2f(50,720));
+    bordaE.setPosition(0.f,0.f);
+    bordaE.setFillColor(sf::Color(100,149,237));
+
+    bordaD.setSize(sf::Vector2f(50,720));
+    bordaD.setPosition(1150.f,0.f);
+    bordaD.setFillColor(sf::Color(100,149,237));
+
+    bordaS.setSize(sf::Vector2f(1100,50));
+    bordaS.setPosition(50.f,0.f);
+    bordaS.setFillColor(sf::Color(100,149,237));
+
+    bola.setFillColor(sf::Color::White);
+    bola.setRadius(4);
+
+    pont.setFont(font);
+    pont.setColor(sf::Color(0,0,0));
+    pont.setString("Pontos: "+std::to_string(pontos));
+    pont.setPosition(950,10);
+
+    sizePilha.setFont(font);
+    sizePilha.setColor(sf::Color(0,0,0));
+    sizePilha.setString(std::to_string(pilha.size()));
+    sizePilha.setPosition(750,10);
+
+    topPilha.setSize(sf::Vector2f(20,20));
+    topPilha.setPosition(800,10);
+
+    pilha.clear();
+    Blocos.clear();
+    Vidas.clear();
+
 }
