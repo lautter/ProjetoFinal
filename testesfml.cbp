@@ -50,13 +50,24 @@
 		</Compiler>
 		<Unit filename="include/Bloco.hpp" />
 		<Unit filename="include/Buffer.hpp" />
+		<Unit filename="include/Fila.hpp" />
+		<Unit filename="include/Lista.hpp" />
 		<Unit filename="include/Menu.hpp" />
+		<Unit filename="include/Pilha.hpp" />
 		<Unit filename="include/Random.hpp" />
 		<Unit filename="include/Tela1.hpp" />
 		<Unit filename="include/cScreen.hpp" />
 		<Unit filename="src/Bloco.cpp" />
 		<Unit filename="src/Buffer.cpp" />
+		<Unit filename="src/Fila.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/Pilha.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="src/Random.cpp" />
 		<Unit filename="src/Tela1.cpp" />
 		<Unit filename="teste.cpp" />

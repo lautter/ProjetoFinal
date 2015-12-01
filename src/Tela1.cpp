@@ -64,8 +64,10 @@ Tela1::~Tela1()
 }
 
 
-int Tela1::Run(sf::RenderWindow &App){
+int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
     limpar();
+    qVidas=lifes;
+    pontos=pontos;
     #define MULTIPLICADOR 100
     //posicao inicial do mouse em relacao a janela
     sf::Mouse::setPosition(sf::Vector2i(300, 250),App);
@@ -189,29 +191,30 @@ int Tela1::Run(sf::RenderWindow &App){
             else break;
         }
         //Evento dos blocos
-        for(Lista<Bloco>::iterator i=Blocos.begin();i!=Blocos.end();i++){
-            if(i->getGlobalBounds().intersects(bola.getGlobalBounds())){
-                if(bola.getPosition().y>i->getPosition().y&&bola.getPosition().y<i->getPosition().y+35){
+        for(int j;j<Blocos.size();j++){
+            Bloco i=Blocos.getItem(j);
+            if(i.getGlobalBounds().intersects(bola.getGlobalBounds())){
+                if(bola.getPosition().y>i.getPosition().y&&bola.getPosition().y<i.getPosition().y+35){
                     speed.x*=-1;
                     }
                 else
                     speed.y*=-1;
 
-                --(*i);
+                --(i);
                 //Olhar essa parte
                 ///Mesmo sem quebrar o bloco, a pilha é alterada
                 if(!pilha.empty()){
-                    if(i->getFillColor()==pilha.top())
+                    if(i.getFillColor()==pilha.top())
                         pilha.pop();
                     else
-                        pilha.push(i->getFillColor());
+                        pilha.push(i.getFillColor());
                 }else{
                     preenchePilha(arrayColors);
                     pontos+=bonusPilha*MULTIPLICADOR;
                 }
-                if(i->getLife()==0){
-                    pontos+=10*i->getType();
-                    i=Blocos.erase(i);
+                if(i.getLife()==0){
+                    pontos+=10*i.getType();
+                    Blocos.erase(i);
                 }
             }
         }
@@ -238,12 +241,16 @@ int Tela1::Run(sf::RenderWindow &App){
             preenchePilha(arrayColors);
         App.draw(topPilha);
 
-        for(std::list<sf::RectangleShape>::iterator i=Vidas.begin();i!=Vidas.end();i++)
-            App.draw(*i);
+        for(int j;j<Vidas.size();j++){
+            sf::RectangleShape i=Vidas.getItem(j);
+            App.draw(i);
+        }
 
         //Desenhando blocos
-        for(std::list<Bloco>::iterator i=Blocos.begin();i!=Blocos.end();i++)
-            App.draw(*i);
+        for(int j;j<Blocos.size();j++){
+            Bloco i=Blocos.getItem(j);
+            App.draw(i);
+        }
 
 
         App.display();

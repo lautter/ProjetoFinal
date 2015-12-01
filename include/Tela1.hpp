@@ -8,8 +8,6 @@
 
 #include <iostream>
 #include <list>
-//#include <stack>
-//#define Pilha std::stack
 #include "Pilha.hpp"
 #include "Lista.hpp"
 
@@ -26,7 +24,7 @@ class Tela1:public cScreen
         /**
          * @brief Roda os componentes correspondentes a essa classe na janela
          */
-        virtual int Run(sf::RenderWindow &App);
+        virtual int Run(sf::RenderWindow &App,int &lifes,int &pontos);
         void preenchePilha(sf::Color *arrayColors);
         void preencheBlocos(sf::Color *arrayColors);
         void preencheVidas(void);

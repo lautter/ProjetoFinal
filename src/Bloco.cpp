@@ -9,7 +9,7 @@ Bloco::Bloco(const sf::Vector2f &size):sf::RectangleShape(size)
 
 Bloco::~Bloco()
 {
-    //dtor
+
 }
 
 int Bloco::operator--(void){

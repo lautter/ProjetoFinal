@@ -49,7 +49,7 @@ void Menu::moveDown(void){
 }
 
 
-int Menu::Run(sf::RenderWindow &App){
+int Menu::Run(sf::RenderWindow &App,int &lifes,int &pontos){
     limpar();
     sf::Event evento;
     while(App.isOpen()){

@@ -20,7 +20,7 @@ class Menu: public cScreen
         /**
          * @brief Roda os componentes correspondentes a essa classe na janela
         */
-        virtual int Run(sf::RenderWindow &App);
+        virtual int Run(sf::RenderWindow &App,int &lifes,int &pontos);
         /**
          * @brief Roda o código do construtor
         */

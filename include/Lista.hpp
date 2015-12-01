@@ -1,14 +1,13 @@
 #ifndef LISTA_HPP
 #define LISTA_HPP
 #include <iostream>
-
 template<typename T>
 class Lista{
 	public:
-		struct node{
-			T data;
-			node* next;
-		};
+        struct node{
+            T data;
+            node* next;
+        };
 	private:
 		node* head;
 		node* tail;
@@ -19,13 +18,16 @@ class Lista{
 		void push_back(T data);
 		void push_front(T data);
 
-		void pop_back(T data);
-		void pop_front(T data);
+		void pop_back(void);
+		void pop_front(void);
 
 		int size(void);
 		bool erase(T data);
 		bool search(T data);
 		bool empty(void);
+
+        void clear(void);
+        T getItem(int j=0);
 
 		inline friend
 		std::ostream &operator <<(std::ostream &_os,const Lista &list){
@@ -50,9 +52,18 @@ Lista<T>::Lista(){
 }
 template<typename T>
 Lista<T>::~Lista(){
-	node* tmp=head;
+	node *tmp=head;
 	while(tmp->next!=NULL){
-		node* tmp2=tmp;
+		node *tmp2=tmp;
+		tmp=tmp->next;
+		delete tmp2;
+	}
+}
+template<typename T>
+void Lista<T>::clear(void){
+    node *tmp=head;
+	while(tmp->next!=NULL){
+		node *tmp2=tmp;
 		tmp=tmp->next;
 		delete tmp2;
 	}
@@ -69,6 +80,7 @@ void Lista<T>::push_front(T data){
 	head->next=tmp;
 	length++;
 }
+
 template<typename T>
 void Lista<T>::push_back(T data){
 	node* tmp=new node;
@@ -84,6 +96,23 @@ void Lista<T>::push_back(T data){
 	tail=tmp;
 	length++;
 }
+
+template<typename T>
+void Lista<T>::pop_back(void){
+    node* end=head;
+    while(end->next!=tail)
+		end=end->next;
+    delete end->next;
+    end->next=NULL;
+}
+
+template<typename T>
+void Lista<T>::pop_front(void){
+    node* tmp=head->next;;
+    head->next=tmp->next;
+    delete tmp;
+}
+
 
 template<typename T>
 bool Lista<T>::erase(T data){
@@ -124,8 +153,18 @@ template<typename T>
 bool Lista<T>::empty(void){
 	return (this->head->next==NULL);
 }
+
 template<typename T>
 int Lista<T>::size(void){
     return length;
 }
+
+template<typename T>
+T Lista<T>::getItem(int j){
+    node* tmp=head->next;
+    for(int i=0;i<j;i++)
+        tmp=tmp->next;
+    return tmp->data;
+}
+
 #endif

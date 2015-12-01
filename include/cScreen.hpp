@@ -5,7 +5,7 @@
 class cScreen
 {
     public:
-        virtual int Run(sf::RenderWindow &App)=0;
+        virtual int Run(sf::RenderWindow &App,int &lifes,int &pontos)=0;
 };
 
 #endif // CSCREEN_HPP
