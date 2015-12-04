@@ -1,6 +1,6 @@
 #include "Buffer.hpp"
 
-Buffer::Buffer(const sf::Vector2f &size,sf::Vector2f position,type _type):sf::RectangleShape(size)
+Buffer::Buffer(const sf::Vector2f &size,sf::Vector2f position,type _type) : sf::RectangleShape(size)
 {
     speed.y=10;
     this->setPosition(position);

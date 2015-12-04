@@ -1,7 +1,8 @@
 #include "Tela1.hpp"
 #include <iostream>
 #include <string>
-
+#include <sstream>
+#define NUMBLOCOS 4
 Tela1::Tela1(int _fase)
 {
     fase=_fase;
@@ -14,35 +15,63 @@ Tela1::Tela1(int _fase)
     qBlocos=7;
 
     //Fonte
-    if(!font.loadFromFile("/usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-M.ttf")&&!font.loadFromFile("arial.ttf"))
+    if(/*!font.loadFromFile("/usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-M.ttf")&&*/!font.loadFromFile("C:/Windows/Fonts/Arial.ttf"))
         std::cout<<"Fonte no encontrada!!"<<std::endl;
 
     //Music
     if(!music.openFromFile("S31-Hit and Run.ogg"))
         std::cout << "Não deu pra abrir a música caras..." << std::endl;
+    if(!laser1.openFromFile("laserfire01.ogg"))
+        std::cout << "Não deu pra abrir o som do laser1..." << std::endl;
+    if(!laser2.openFromFile("laserfire02.ogg"))
+        std::cout << "Não deu pra abrir o som do laser2..." << std::endl;
 
     //Sabre
-    if(!lightssaber.loadFromFile("lightsaber.png"))
+    if(!lightssaber.loadFromFile("lightsaber2.png"))
         std::cout << "Nao foi possivel carregar lightsaber.png" << std::endl;
     lightsaber.setTexture(lightssaber);
-    lightsaber.rotate(90);
+    lightsaber.rotate(180);
 
     //background
-    if(!backg.loadFromFile("background.png"))
+    if(!backg.loadFromFile("parallax-space-backgound.png"))
         std::cout << "Não foi possivel carregar background!" << std::endl;
     background.setTexture(backg);
+    background.setScale(6.f,6.f);
+    if(!bigPlanet.loadFromFile("parallax-space-big-planet.png"))
+        std::cout << "Não foi possivel carregar big planet!" << std::endl;
+    bPlanet.setTexture(bigPlanet);
+    bPlanet.setScale(4.f,4.f);
+    bPlanet.setPosition(1300.f,350);
+    if(!farPlanet.loadFromFile("parallax-space-far-planets.png"))
+        std::cout << "Não foi possivel carregar far planets!" << std::endl;
+    fPlanet.setTexture(farPlanet);
+    fPlanet.setScale(3.f,3.f);
+    fPlanet.setPosition(900.f,80.f);
+    if(!ringPlanet.loadFromFile("parallax-space-ring-planet.png"))
+        std::cout << "Não foi possivel carregar ring planet!" << std::endl;
+    rPlanet.setTexture(ringPlanet);
+    rPlanet.setScale(4.f,4.f);
+    rPlanet.setPosition(1000.f,300.f);
+    if(!starRs.loadFromFile("parallax-space-stars.png"))
+        std::cout << "Não foi possivel carregar stars!" << std::endl;
+    stars.setTexture(starRs);
+    stars2.setTexture(starRs);
+    stars.setPosition(55.f,55.f);
+    stars.setScale(4.f,4.f);
+    stars2.setPosition(800.f,70.f);
+    stars2.setScale(3.f,3.f);
 
-    bordaE.setSize(sf::Vector2f(50,720));
+    /*bordaE.setSize(sf::Vector2f(50,720));
     bordaE.setPosition(0.f,0.f);
-    bordaE.setFillColor(sf::Color(100,149,237));
+    bordaE.setFillColor(sf::Color(255,255,255));
 
     bordaD.setSize(sf::Vector2f(50,720));
     bordaD.setPosition(1150.f,0.f);
-    bordaD.setFillColor(sf::Color(100,149,237));
+    bordaD.setFillColor(sf::Color(255,255,255));
 
     bordaS.setSize(sf::Vector2f(1100,50));
     bordaS.setPosition(50.f,0.f);
-    bordaS.setFillColor(sf::Color(100,149,237));
+    bordaS.setFillColor(sf::Color(255,255,255));
 
     bola.setFillColor(sf::Color::White);
     bola.setRadius(4);
@@ -58,7 +87,7 @@ Tela1::Tela1(int _fase)
     sizePilha.setPosition(750,10);
 
     topPilha.setSize(sf::Vector2f(20,20));
-    topPilha.setPosition(800,10);
+    topPilha.setPosition(800,10);*/
 }
 Tela1::~Tela1()
 {
@@ -66,10 +95,14 @@ Tela1::~Tela1()
 }
 
 
-int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
+int Tela1::Run(sf::RenderWindow &App,int &lifes,int &_pontos,bool flag,char b[]){
+    std::cout<<fase<<std::endl;
     limpar();
-    qVidas=lifes;
-    pontos=pontos;
+    std::cout<<fase<<std::endl;
+    if(flag){
+        qVidas=lifes;
+        pontos=_pontos;
+    }
     #define MULTIPLICADOR 100
     //posicao inicial do mouse em relacao a janela
     sf::Mouse::setPosition(sf::Vector2i(300, 250),App);
@@ -96,10 +129,12 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
     // --------- eventos e logica do jogo
     while (App.isOpen())
     {
+        lifes=qVidas;
+        _pontos=pontos;
         sf::Event event;
         while (App.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
+            if (event.type == sf::Event::Closed || (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)))
                 App.close();
         }
 
@@ -131,10 +166,10 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
 
         ///Bola
         if(speed.x==0.f&&speed.y==0.f){
-            bola.setPosition(lightsaber.getPosition().x-70,lightsaber.getPosition().y-10);
+            bola.setPosition(600,460);
             if(sf::Mouse::isButtonPressed(sf::Mouse::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
-                speed.x=-5.f;
-                speed.y=-5.f;
+                speed.x=0.f;
+                speed.y=5.f;
             }
         }
         else
@@ -156,6 +191,7 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
 
         if(lightsaber.getGlobalBounds().intersects((bola.getGlobalBounds())))
         {
+            laser2.play();
             if(bola.getPosition().y<lightsaber.getPosition().y){
                 speed.y *=(-1);
 
@@ -177,14 +213,15 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
         }
 
         //Controle de velocidade
-        if(speed.x>10){speed.x-=1;}
-        if(speed.x<-10){speed.x+=1;}
-        if(speed.y>10){speed.y-=1;}
-        if(speed.y<-10){speed.y+=1;}
+        if(speed.x>7){speed.x-=1;}
+        if(speed.x<-7){speed.x+=1;}
+        if(speed.y>7){speed.y-=1;}
+        if(speed.y<-7){speed.y+=1;}
 
         //Bola caindo
         if(bola.getPosition().y >= 720)
         {
+
             speed.x=0;
             speed.y=0;
             bola.setPosition(lightsaber.getPosition().x-70,lightsaber.getPosition().y-10);
@@ -195,12 +232,13 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
         //Evento dos blocos
         for(Lista<Bloco>::iterator i=Blocos.begin();i!=Blocos.end();i++){
              if(i->getGlobalBounds().intersects(bola.getGlobalBounds())){
-                 if(bola.getPosition().y>i->getPosition().y&&bola.getPosition().y<i->getPosition().y+35){
+                 laser1.play();
+                 if(bola.getPosition().y>i->getPosition().y&&bola.getPosition().y<i->getPosition().y+25){
                      speed.x*=-1;
                      }
-                 else
+                 else{
                      speed.y*=-1;
-
+                 }
                  --(*i);
                  //Olhar essa parte
                  ///Mesmo sem quebrar o bloco, a pilha é alterada
@@ -221,9 +259,27 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
         }
 
         // ------------ Desenho
-        App.clear();
+        App.clear(sf::Color::White);
         App.draw(background);
+        App.draw(stars2);
+        // parallax
+        stars.setPosition(stars.getPosition().x-0.1,stars.getPosition().y);
+        if(stars.getPosition().x<-1000)
+            stars.setPosition(1100,stars.getPosition().y);
+        fPlanet.setPosition(fPlanet.getPosition().x-0.3,fPlanet.getPosition().y);
+        if(fPlanet.getPosition().x<-1000)
+            fPlanet.setPosition(1200,fPlanet.getPosition().y);
+        rPlanet.setPosition(rPlanet.getPosition().x-0.7,rPlanet.getPosition().y);
+        if(rPlanet.getPosition().x<-800)
+            rPlanet.setPosition(1100,rPlanet.getPosition().y);
+        bPlanet.setPosition(bPlanet.getPosition().x-1,bPlanet.getPosition().y);
+        if(bPlanet.getPosition().x<-800)
+            bPlanet.setPosition(1200,bPlanet.getPosition().y);
 
+        App.draw(stars);
+        App.draw(fPlanet);
+        App.draw(rPlanet);
+        App.draw(bPlanet);
         App.draw(lightsaber);
         App.draw(bordaE);
         App.draw(bordaD);
@@ -235,25 +291,27 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
 
         sizePilha.setString(to_string(pilha.size()));
         App.draw(sizePilha);
-
+        ////Pilha
         if(!pilha.empty())
             topPilha.setFillColor(pilha.top());
         else
             preenchePilha(arrayColors);
         App.draw(topPilha);
 
-        for(std::list<sf::RectangleShape>::iterator i=Vidas.begin();i!=Vidas.end();i++)
+        for(Lista<sf::RectangleShape>::iterator i=Vidas.begin();i!=Vidas.end();i++)
              App.draw(*i);
 
          //Desenhando blocos
-         for(std::list<Bloco>::iterator i=Blocos.begin();i!=Blocos.end();i++)
+         for(Lista<Bloco>::iterator i=Blocos.begin();i!=Blocos.end();i++)
              App.draw(*i);
 
 
         App.display();
         if(Blocos.empty()){
-            return 2;
+            music.stop();
+            return fase+2;
         }
+
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -283,7 +341,7 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &pontos){
             }
         }
         App.clear();
-        App.draw(background);
+
         App.draw(text);
         App.draw(text2);
         App.draw(bordaE);
@@ -306,21 +364,21 @@ void Tela1::preenchePilha(sf::Color *arrayColors){
 void Tela1::preencheVidas(void){
     for(int i=0;i<qVidas;i++){
         sf::RectangleShape vida(sf::Vector2f(20,20));
-        vida.setFillColor(sf::Color((255), (0), (0))); //colore essa poha com branco tabela de cores http://www.ufpa.br/dicas/htm/htm-cor2.htm
-        vida.setPosition(100+i*40,10); //seta a poha da posicao
+        vida.setFillColor(sf::Color((255), (0), (0))); //colore com branco tabela de cores http://www.ufpa.br/dicas/htm/htm-cor2.htm
+        vida.setPosition(100+i*40,10); //seta a posicao
         Vidas.push_back(vida);
     }
 }
 
 //Adicionando blocos na lista
 void Tela1::preencheBlocos(sf::Color *arrayColors){
-    for(int j=0;j<4;j++){
+    for(int j=0;j<NUMBLOCOS;j++){
         for(int i=0;i<qBlocos;i++){
-            Bloco bloco(sf::Vector2f(120,40));
-            bloco.setFillColor(arrayColors[ger.getInt(0,mColor-1)]); //colore essa poha com branco tabela de cores http://www.ufpa.br/dicas/htm/htm-cor2.htm
-            //Blocos[i].setOutlineThickness(10); //seta uma borda pra essa poha
-            //Blocos[i].setOutlineColor(sf::Color(85, 23, 139)); //seta a cor da borda dessa poha
-            bloco.setPosition(100+i*140,100+40*j); //seta a poha da posicao
+            Bloco bloco(sf::Vector2f(110,30));
+            bloco.setFillColor(arrayColors[ger.getInt(0,mColor-1)]); //colore com branco tabela de cores http://www.ufpa.br/dicas/htm/htm-cor2.htm
+            //Blocos[i].setOutlineThickness(10); //
+            //Blocos[i].setOutlineColor(sf::Color(85, 23, 139));
+            bloco.setPosition(100+i*140,100+40*j);
             bloco.setLife(bLife);
             Blocos.push_back(bloco);
         }
@@ -344,15 +402,15 @@ void Tela1::limpar(void){
 
     bordaE.setSize(sf::Vector2f(50,720));
     bordaE.setPosition(0.f,0.f);
-    bordaE.setFillColor(sf::Color(100,149,237));
+    bordaE.setFillColor(sf::Color(0,0,0));
 
     bordaD.setSize(sf::Vector2f(50,720));
     bordaD.setPosition(1150.f,0.f);
-    bordaD.setFillColor(sf::Color(100,149,237));
+    bordaD.setFillColor(sf::Color(0,0,0));
 
     bordaS.setSize(sf::Vector2f(1100,50));
     bordaS.setPosition(50.f,0.f);
-    bordaS.setFillColor(sf::Color(100,149,237));
+    bordaS.setFillColor(sf::Color(0,0,0));
 
     bola.setFillColor(sf::Color::White);
     bola.setRadius(4);
@@ -375,7 +433,9 @@ void Tela1::limpar(void){
     Vidas.clear();
 }
 std::string Tela1::to_string(int i){
+    std::stringstream s;
     std::string a="";
-    a+=i;
+    s<<i;
+    a+=s.str();
     return a;
 }

@@ -12,16 +12,17 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 					<Add option="-DSFML_STATIC" />
 					<Add directory="C:/SFML-2.3.2/include" />
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
-					<Add library="sfml-graphics" />
-					<Add library="sfml-audio" />
-					<Add library="sfml-system" />
-					<Add library="sfml-window" />
+					<Add library="sfml-graphics-d" />
+					<Add library="sfml-audio-d" />
+					<Add library="sfml-window-d" />
+					<Add library="sfml-system-d" />
 					<Add directory="C:/SFML-2.3.2/lib" />
 				</Linker>
 			</Target>
@@ -32,6 +33,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-DSFML_STATIC" />
 					<Add directory="C:/SFML-2.3.2/include" />
 					<Add directory="include" />
 				</Compiler>
@@ -59,15 +61,7 @@
 		<Unit filename="include/cScreen.hpp" />
 		<Unit filename="src/Bloco.cpp" />
 		<Unit filename="src/Buffer.cpp" />
-		<Unit filename="src/Fila.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
 		<Unit filename="src/Menu.cpp" />
-		<Unit filename="src/Pilha.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
 		<Unit filename="src/Random.cpp" />
 		<Unit filename="src/Tela1.cpp" />
 		<Unit filename="teste.cpp" />

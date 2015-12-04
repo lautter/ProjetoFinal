@@ -1,6 +1,6 @@
 #include "Bloco.hpp"
 
-Bloco::Bloco(const sf::Vector2f &size):sf::RectangleShape(size)
+Bloco::Bloco(const sf::Vector2f &size) : sf::RectangleShape(size)
 {
     life=1;
     type=1;
@@ -28,5 +28,5 @@ void Bloco::setType(int _type){
     life=_type;
 }
 int Bloco::getType(void) const{
-    return life;
+    return type;
 }

@@ -1,4 +1,3 @@
-//Basic Screen Class
 #include "cScreen.hpp"
 #include "Menu.hpp"
 #include "Tela1.hpp"
@@ -9,11 +8,25 @@
 #define altura 720
 #define largura 1200
 
+#include <stdio.h>
+
 int main(int argc, char** argv)
 {
-    Bloco a;
-    Bloco b;
-    a=b;
+    FILE *p;
+    if(!(p=fopen("./Scores","a")))
+        std::cout<<"ERRO AO ABRIR ARQUIVO"<<std::endl;
+    char a[100];
+    std::vector<std::string> scores;
+    while(fgets(a,99,p)){
+        std::string b(a);
+        scores.push_back(b);
+    }
+
+    fclose(p);
+
+    if(!(p=fopen("./Scores","w")))
+        std::cout<<"ERRO AO ABRIR ARQUIVO"<<std::endl;
+
     //Applications variables
     std::vector<cScreen*> Screens;
 
@@ -27,6 +40,7 @@ int main(int argc, char** argv)
     int lifes=3;
     int pontos=0;
 
+    int anterior;
     Menu menu(largura,altura);
     Tela1 tela1;
     Tela1 tela2(1);
@@ -40,7 +54,18 @@ int main(int argc, char** argv)
     Screens.push_back(&tela4);
     Screens.push_back(&tela5);
 
-    for(int i=0;i>=0;i=Screens[i]->Run(App,lifes,pontos));
+    bool flag;
+    for(int i=0;i>=0 && i<5;i=Screens[i]->Run(App,lifes,pontos,flag,a)){
+        if(i==0)
+            flag=false;
+        else
+            flag=true;
+    }
+    sscanf(a,"%d",&anterior);
+    if(pontos>anterior)
+        sprintf(a,"%d",pontos);
+    fputs(a,p);
+    fclose(p);
 
     return EXIT_SUCCESS;
 }

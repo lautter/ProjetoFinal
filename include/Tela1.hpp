@@ -24,7 +24,7 @@ class Tela1:public cScreen
         /**
          * @brief Roda os componentes correspondentes a essa classe na janela
          */
-        virtual int Run(sf::RenderWindow &App,int &lifes,int &pontos);
+        virtual int Run(sf::RenderWindow &App,int &lifes,int &_pontos,bool flag,char[]);
         void preenchePilha(sf::Color *arrayColors);
         void preencheBlocos(sf::Color *arrayColors);
         void preencheVidas(void);
@@ -49,6 +49,8 @@ class Tela1:public cScreen
         Random ger; //!< @brief Instancia da classe Random. Serve para gerar inteiros aleatórios
 
         sf::Music music;
+        sf::Music laser1;
+        sf::Music laser2;
         sf::Font font;
         sf::Text pont;
 
@@ -57,6 +59,15 @@ class Tela1:public cScreen
 
         sf::Texture backg;
         sf::Sprite background;
+        sf::Texture bigPlanet;
+        sf::Sprite bPlanet;
+        sf::Texture farPlanet;
+        sf::Sprite fPlanet;
+        sf::Texture ringPlanet;
+        sf::Sprite rPlanet;
+        sf::Texture starRs;
+        sf::Sprite stars;
+        sf::Sprite stars2;
 
         sf::RectangleShape bordaE;
         sf::RectangleShape bordaD;

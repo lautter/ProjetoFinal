@@ -582,7 +582,7 @@
 1449002103 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/Lista.hpp
 	<iostream>
 
-1449004361 source:c:\users\edye_\documents\github\projetofinal\src\bloco.cpp
+1449081916 source:c:\users\edye_\documents\github\projetofinal\src\bloco.cpp
 	"Bloco.hpp"
 
 1449004361 c:\users\edye_\documents\github\projetofinal\include\bloco.hpp
@@ -597,23 +597,23 @@
 1449004361 c:\users\edye_\documents\github\projetofinal\include\pilha.hpp
 	<iostream>
 
-1449005915 c:\users\edye_\documents\github\projetofinal\include\lista.hpp
+1449081928 c:\users\edye_\documents\github\projetofinal\include\lista.hpp
 	<iostream>
 	<list>
 
-1449004361 source:c:\users\edye_\documents\github\projetofinal\src\buffer.cpp
+1449081916 source:c:\users\edye_\documents\github\projetofinal\src\buffer.cpp
 	"Buffer.hpp"
 
-1449004361 source:c:\users\edye_\documents\github\projetofinal\src\menu.cpp
+1449173391 source:c:\users\edye_\documents\github\projetofinal\src\menu.cpp
 	"Menu.hpp"
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1449004361 c:\users\edye_\documents\github\projetofinal\include\menu.hpp
+1449014277 c:\users\edye_\documents\github\projetofinal\include\menu.hpp
 	"cScreen.hpp"
 	<SFML/Graphics.hpp>
 
-1449004361 c:\users\edye_\documents\github\projetofinal\include\cscreen.hpp
+1449014245 c:\users\edye_\documents\github\projetofinal\include\cscreen.hpp
 	<SFML/Graphics.hpp>
 
 1449004654 source:c:\users\edye_\documents\github\projetofinal\src\random.cpp
@@ -624,12 +624,13 @@
 
 1449004361 c:\users\edye_\documents\github\projetofinal\include\random.hpp
 
-1449005774 source:c:\users\edye_\documents\github\projetofinal\src\tela1.cpp
+1449178882 source:c:\users\edye_\documents\github\projetofinal\src\tela1.cpp
 	"Tela1.hpp"
 	<iostream>
 	<string>
+	<sstream>
 
-1449005547 c:\users\edye_\documents\github\projetofinal\include\tela1.hpp
+1449176417 c:\users\edye_\documents\github\projetofinal\include\tela1.hpp
 	"cScreen.hpp"
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
@@ -639,11 +640,12 @@
 	"Lista.hpp"
 	"Bloco.hpp"
 
-1449004361 source:c:\users\edye_\documents\github\projetofinal\teste.cpp
+1449016850 source:c:\users\edye_\documents\github\projetofinal\teste.cpp
 	"cScreen.hpp"
 	"Menu.hpp"
 	"Tela1.hpp"
 	<iostream>
 	<SFML/Graphics.hpp>
 	<vector>
+	<stdio.h>
 
