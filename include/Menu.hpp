@@ -2,6 +2,7 @@
 #define MENU_HPP
 #include "cScreen.hpp"
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #define QMENUOPTIONS 3
 /**
@@ -14,7 +15,7 @@ class Menu: public cScreen
         Menu(float width=1200, float height=720);
         /** Destrutor de Menu */
         ~Menu();
-
+        sf::Music mMusic;
         void moveUp(void);
         void moveDown(void);
         /**

@@ -1,15 +1,16 @@
  ------
 | Info |
  ------
-
-This SFX was created for the game prototype: Space Pioneer
-
+////////////////////////////////////////////////////
+Lasers
 Triki Minut Interactive
 www.trikiminut.com
-
 Credit: 
-
 K.L.Jonasson, Winnipeg, Canada.
 Triki Minut Interactive
 www.trikiminut.com
-
+/////////////////////////////////////////////////////
+Main game music
+http://opengameart.org/content/neocrey-disco-century
+Copyright/Attribution Notice: 
+neocrey - neocrey.com

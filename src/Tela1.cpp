@@ -1,5 +1,6 @@
 #include "Tela1.hpp"
 #include <iostream>
+#include <SFML/Audio.hpp>
 #include <string>
 #include <sstream>
 #define NUMBLOCOS 4
@@ -19,7 +20,7 @@ Tela1::Tela1(int _fase)
         std::cout<<"Fonte no encontrada!!"<<std::endl;
 
     //Music
-    if(!music.openFromFile("S31-Hit and Run.ogg"))
+    if(!music.openFromFile("Disco Century.wav"))
         std::cout << "Não deu pra abrir a música caras..." << std::endl;
     if(!laser1.openFromFile("laserfire01.ogg"))
         std::cout << "Não deu pra abrir o som do laser1..." << std::endl;
@@ -32,7 +33,7 @@ Tela1::Tela1(int _fase)
     lightsaber.setTexture(lightssaber);
     lightsaber.rotate(180);
 
-    //background
+    //background und parallax
     if(!backg.loadFromFile("parallax-space-backgound.png"))
         std::cout << "Não foi possivel carregar background!" << std::endl;
     background.setTexture(backg);
@@ -106,6 +107,7 @@ int Tela1::Run(sf::RenderWindow &App,int &lifes,int &_pontos,bool flag,char b[])
     #define MULTIPLICADOR 100
     //posicao inicial do mouse em relacao a janela
     sf::Mouse::setPosition(sf::Vector2i(300, 250),App);
+
     music.play();
 
     //Definindo array de colors
@@ -364,7 +366,7 @@ void Tela1::preenchePilha(sf::Color *arrayColors){
 void Tela1::preencheVidas(void){
     for(int i=0;i<qVidas;i++){
         sf::RectangleShape vida(sf::Vector2f(20,20));
-        vida.setFillColor(sf::Color((255), (0), (0))); //colore com branco tabela de cores http://www.ufpa.br/dicas/htm/htm-cor2.htm
+        vida.setFillColor(sf::Color((255), (0), (0))); //colore  tabela de cores http://www.ufpa.br/dicas/htm/htm-cor2.htm
         vida.setPosition(100+i*40,10); //seta a posicao
         Vidas.push_back(vida);
     }
@@ -375,7 +377,7 @@ void Tela1::preencheBlocos(sf::Color *arrayColors){
     for(int j=0;j<NUMBLOCOS;j++){
         for(int i=0;i<qBlocos;i++){
             Bloco bloco(sf::Vector2f(110,30));
-            bloco.setFillColor(arrayColors[ger.getInt(0,mColor-1)]); //colore com branco tabela de cores http://www.ufpa.br/dicas/htm/htm-cor2.htm
+            bloco.setFillColor(arrayColors[ger.getInt(0,mColor-1)]); //colore tabela de cores http://www.ufpa.br/dicas/htm/htm-cor2.htm
             //Blocos[i].setOutlineThickness(10); //
             //Blocos[i].setOutlineColor(sf::Color(85, 23, 139));
             bloco.setPosition(100+i*140,100+40*j);
@@ -416,12 +418,12 @@ void Tela1::limpar(void){
     bola.setRadius(4);
 
     pont.setFont(font);
-    pont.setColor(sf::Color(0,0,0));
+    pont.setColor(sf::Color(255,255,255));
     pont.setString("Pontos: "+to_string(pontos));
     pont.setPosition(950,10);
 
     sizePilha.setFont(font);
-    sizePilha.setColor(sf::Color(0,0,0));
+    sizePilha.setColor(sf::Color(255,255,255));
     sizePilha.setString(to_string(pilha.size()));
     sizePilha.setPosition(750,10);
 

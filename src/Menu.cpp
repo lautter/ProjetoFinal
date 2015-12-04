@@ -1,11 +1,15 @@
 #include "Menu.hpp"
+#include "Tela1.hpp"
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 Menu::Menu(float width, float height)
 {
     if(/*!font.loadFromFile("/usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-M.ttf")&&*/!font.loadFromFile("C:/Windows/Fonts/Arial.ttf"))
         std::cout<<"Fonte no encontrada!!"<<std::endl;
-
+    if(!mMusic.openFromFile("S31-Hit and Run.ogg"))
+        std::cout << "Não deu pra abrir a música do menu caras..." << std::endl;
+    mMusic.play();
     selectedItem=0;
 
     //Build the Play Option
@@ -77,8 +81,9 @@ int Menu::Run(sf::RenderWindow &App,int &lifes,int &pontos,bool flag,char b[]){
                             moveDown();
                             break;
                         case sf::Keyboard::Return:
+
                             switch(selectedItem){
-                                case 0: return 1; break;
+                                case 0: mMusic.stop(); return 1; break;
                                 case 1:
                                 while(App.isOpen()){
                                     sf::Event event;
@@ -118,7 +123,7 @@ void Menu::limpar(void){
     //Build the Play Option
     menu[0].setFont(font);
     menu[0].setColor(sf::Color::Red);
-    menu[0].setString("Play");
+    menu[0].setString("Jogar");
 
     //Build the Ranking Option
     menu[1].setFont(font);
@@ -128,5 +133,5 @@ void Menu::limpar(void){
     //Build the Exit Option
     menu[2].setFont(font);
     menu[2].setColor(sf::Color::White);
-    menu[2].setString("Exit");
+    menu[2].setString("Sair");
 }
