@@ -3,13 +3,26 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
+
+#include <string>
+#include <sstream>
 Menu::Menu(float width, float height)
 {
-    if(/*!font.loadFromFile("/usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-M.ttf")&&*/!font.loadFromFile("C:/Windows/Fonts/Arial.ttf"))
-        std::cout<<"Fonte no encontrada!!"<<std::endl;
+    if(!font.loadFromFile("C:/Windows/Fonts/Arial.ttf"))
+        if(!font.loadFromFile("/usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-M.ttf"))
+            std::cout<<"Fonte no encontrada!!"<<std::endl;
     if(!mMusic.openFromFile("S31-Hit and Run.ogg"))
         std::cout << "Não deu pra abrir a música do menu caras..." << std::endl;
-    mMusic.play();
+    if(!Mbackg.loadFromFile("parallax-space-backgound.png"))
+        std::cout << "Não foi possivel carregar background do menu!" << std::endl;
+    if(!starRs.loadFromFile("parallax-space-stars.png"))
+        std::cout << "Não foi possivel carregar stars!" << std::endl;
+    stars.setTexture(starRs);
+    Mbackground.setTexture(Mbackg);
+    Mbackground.setScale(5,5);
+    stars.setScale(4,4);
+    stars.setPosition(0,100);
+
     selectedItem=0;
 
     //Build the Play Option
@@ -21,7 +34,7 @@ Menu::Menu(float width, float height)
     //Build the Ranking Option
     menu[1].setFont(font);
     menu[1].setColor(sf::Color::White);
-    menu[1].setString("Best Score");
+    menu[1].setString("Best Scores");
     menu[1].setPosition(sf::Vector2f(width/2,height/(QMENUOPTIONS+1)*2));
 
     //Build the Exit Option
@@ -29,6 +42,20 @@ Menu::Menu(float width, float height)
     menu[2].setColor(sf::Color::White);
     menu[2].setString("Exit");
     menu[2].setPosition(sf::Vector2f(width/2,height/(QMENUOPTIONS+1)*3));
+
+    nomeJogo.setFont(font);
+    nomeJogo.setCharacterSize(80);
+    nomeJogo.setColor(sf::Color::White);
+    nomeJogo.setString("Starkanoid");
+    nomeJogo.setPosition(100,550);
+    nomeJogo.setRotation(270);
+
+    //Build the Play Option
+    for(int i=0;i<11;i++){
+        scores[i].setFont(font);
+        scores[i].setColor(sf::Color::White);
+        scores[i].setPosition(sf::Vector2f(600,20+i*100));
+    }
 }
 
 Menu::~Menu()
@@ -53,22 +80,35 @@ void Menu::moveDown(void){
 }
 
 
-int Menu::Run(sf::RenderWindow &App,int &lifes,int &pontos,bool flag,char b[]){
-    limpar();
+int Menu::Run(Janela &App){
+    limpar(App.getJogador());
     sf::Event evento;
-    std::string re(b);
+
     sf::Text text2;
     text2.setFont(font);
     text2.setColor(sf::Color::Red);
-    text2.setString("Best Score: "+re);
+
     text2.setPosition(sf::Vector2f(1200/2-100,720/2+20));
+    std::cout<<"NOWNSO"<<App.getBestScores().size();
+    scores[0].setString("Nome Fase Pontos");
+    for(unsigned int i=1;i<2&&i<App.getBestScores().size();i++){
+        std::cout<<App.getBestScores()[i-1].getNome()<<std::endl;
+        std::string a(App.getBestScores()[i-1].getNome());
+        std::string b(to_string(App.getBestScores()[i-1].getFase()));
+        std::string c(to_string(App.getBestScores()[i-1].getPontos()));
+        std::string d(a+" "+b+" "+c);
+        scores[i].setString(d);
+    }
 
 
     while(App.isOpen()){
         App.clear();
+        App.draw(Mbackground);
+        App.draw(stars);
 
         for(int i=0;i<QMENUOPTIONS;i++)
             App.draw(menu[i]);
+        App.draw(nomeJogo);
 
         if(App.pollEvent(evento)){
             switch(evento.type){
@@ -99,7 +139,12 @@ int Menu::Run(sf::RenderWindow &App,int &lifes,int &pontos,bool flag,char b[]){
                                         }
                                     }
                                     App.clear();
+                                    App.draw(Mbackground);
+                                    App.draw(stars);
                                     App.draw(text2);
+                                        for(int i=0;i<11;i++){
+                                            App.draw(scores[i]);
+                                        }
                                     App.display();
                                 }
                                 break;
@@ -117,21 +162,20 @@ int Menu::Run(sf::RenderWindow &App,int &lifes,int &pontos,bool flag,char b[]){
     }return -1;
 }
 
-void Menu::limpar(void){
+void Menu::limpar(Player &jogador){
     selectedItem=0;
 
-    //Build the Play Option
-    menu[0].setFont(font);
     menu[0].setColor(sf::Color::Red);
-    menu[0].setString("Jogar");
-
-    //Build the Ranking Option
-    menu[1].setFont(font);
     menu[1].setColor(sf::Color::White);
-    menu[1].setString("Best Scores");
-
-    //Build the Exit Option
-    menu[2].setFont(font);
     menu[2].setColor(sf::Color::White);
-    menu[2].setString("Sair");
+
+    jogador.limpa();
+    mMusic.play();
+}
+std::string Menu::to_string(int i){
+    std::stringstream s;
+    std::string a="";
+    s<<i;
+    a+=s.str();
+    return a;
 }

@@ -1,83 +1,66 @@
 #ifndef TELA1_HPP
 #define TELA1_HPP
 
-#include "cScreen.hpp"
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include "Random.hpp"
-
-#include <iostream>
-
 #include "Pilha.hpp"
 #include "Lista.hpp"
+#include "Fila.hpp"
 
 #include "Bloco.hpp"
+#include "Tela.hpp"
+#include "Buff.hpp"
 
-class Tela1:public cScreen
+class Tela1:public cScreen,public Tela
 {
     public:
         /** Default constructor */
-        Tela1(int fase=0);
+        Tela1(Janela &App, int fase=0);
         /** Default destructor */
         ~Tela1();
 
         /**
          * @brief Roda os componentes correspondentes a essa classe na janela
          */
-        virtual int Run(sf::RenderWindow &App,int &lifes,int &_pontos,bool flag,char[]);
+        virtual int Run(Janela &App);
         void preenchePilha(sf::Color *arrayColors);
         void preencheBlocos(sf::Color *arrayColors);
-        void preencheVidas(void);
-        void limpar(void);
 
-        void setqVidas(int _vidas);
-        int getqVidas(void) const;
+        void preencheVidas(Janela &App);
+        /**
+         *
+        */
+        void preencheFila(void);
+        /**
+         *
+        */
+        void limpar(Janela &App);
 
-        std::string to_string(int i);
+        /**
+         *
+        */
+        void setVidas(Janela &App,int _vidas);
+        /**
+         *
+        */
+        int getVidas(Janela &App) const;
 
-    protected:
+        /**
+         *
+        */
+        void sabreMuros(sf::Vector2i posMouseApp,bool &colidiuD,bool &colidiuE);
     private:
-        int fase;
-        int qVidas; //!< @brief As vidas que o jogador possui(começa com 3)
-        int pontos; //!< @brief Os pontos atuais do jogador
         int bLife; //!< @brief A quantidade de vidas de um bloco
         int mColor; //!< @brief Quantidade máxima de cores na fase
         int qPilha; //!< @brief Quantidade de elementos colocados na pilha caso ela esteja vazia
         int qBlocos; //!< @brief Quantidade de blocos em cada linha que a fase conterá
+        int qBuffs; //!< @brief Quantidade de buffs que a fase conterá
         int bonusPilha; //!< @brief Multiplicador de bonus que será dado ao jogador caso ele termine a pilha
-
-        Random ger; //!< @brief Instancia da classe Random. Serve para gerar inteiros aleatórios
-
-        sf::Music music;
-        sf::Music laser1;
-        sf::Music laser2;
-        sf::Font font;
-        sf::Text pont;
-
-        sf::Texture lightssaber;
-        sf::Sprite lightsaber;
-
-        sf::Texture backg;
-        sf::Sprite background;
-        sf::Texture bigPlanet;
-        sf::Sprite bPlanet;
-        sf::Texture farPlanet;
-        sf::Sprite fPlanet;
-        sf::Texture ringPlanet;
-        sf::Sprite rPlanet;
-        sf::Texture starRs;
-        sf::Sprite stars;
-        sf::Sprite stars2;
-
-        sf::RectangleShape bordaE;
-        sf::RectangleShape bordaD;
-        sf::RectangleShape bordaS;
-
-        sf::CircleShape bola;
+        int fase;
+        int numblocos;
 
         Lista<Bloco> Blocos;
-        Lista<sf::RectangleShape> Vidas;
+        Lista<sf::Sprite> Vidas;
         Pilha<sf::Color> pilha;
+        Fila<Buff> buffs;
 
         sf::Text sizePilha;
         sf::RectangleShape topPilha;

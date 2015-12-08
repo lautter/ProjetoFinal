@@ -2,7 +2,7 @@
 #define BLOCO_HPP
 
 #include <SFML/Graphics.hpp>
-#include "Buffer.hpp"
+#include "Buff.hpp"
 class Bloco : public sf::RectangleShape
 {
     public:
@@ -19,10 +19,11 @@ class Bloco : public sf::RectangleShape
         void setType(int _type);
         int getType(void) const;
 
+        bool hasBuff;
     private:
         int life;
         int type;   //!< @brief Armazena a quantidade de vida inicial do bloco
-        bool hasBuffer;
+
 };
 
 #endif // BLOCO_HPP

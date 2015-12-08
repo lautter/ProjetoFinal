@@ -4,6 +4,8 @@
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 
+1449465302 o.hpp>
+
 1429780453 c:\sfml-2.3.2\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
 	<SFML/Graphics/BlendMode.hpp>
@@ -32,6 +34,8 @@
 	<SFML/Graphics/VertexArray.hpp>
 	<SFML/Graphics/View.hpp>
 
+1429780453 hics/View.hpp>
+
 1429780453 c:\sfml-2.3.2\include\sfml\window.hpp
 	<SFML/System.hpp>
 	<SFML/Window/Context.hpp>
@@ -46,6 +50,8 @@
 	<SFML/Window/Window.hpp>
 	<SFML/Window/WindowHandle.hpp>
 	<SFML/Window/WindowStyle.hpp>
+
+1429780453 ow/WindowStyle.hpp>
 
 1429780453 c:\sfml-2.3.2\include\sfml\system.hpp
 	<SFML/Config.hpp>
@@ -67,22 +73,34 @@
 	<SFML/System/Vector2.hpp>
 	<SFML/System/Vector3.hpp>
 
+1429780453 em/Vector3.hpp>
+
 1441976890 c:\sfml-2.3.2\include\sfml\config.hpp
 	"TargetConditionals.h"
+
+1441976890 ditionals.h"
 
 1429780453 c:\sfml-2.3.2\include\sfml\system\clock.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/Time.hpp>
 
+1430987944 em/Time.hpp>
+
 1429780453 c:\sfml-2.3.2\include\sfml\system\export.hpp
 	<SFML/Config.hpp>
+
+1429780453 ig.hpp>
 
 1429780453 c:\sfml-2.3.2\include\sfml\system\time.hpp
 	<SFML/System/Export.hpp>
 
+1429780453 em/Export.hpp>
+
 1429780453 c:\sfml-2.3.2\include\sfml\system\err.hpp
 	<SFML/System/Export.hpp>
 	<ostream>
+
+1449468236 
 
 1436034025 c:\sfml-2.3.2\include\sfml\system\fileinputstream.hpp
 	<SFML/Config.hpp>
@@ -102,6 +120,8 @@
 1429780453 c:\sfml-2.3.2\include\sfml\system\lock.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
+
+1429780453 em/NonCopyable.hpp>
 
 1429780453 c:\sfml-2.3.2\include\sfml\system\memoryinputstream.hpp
 	<SFML/Config.hpp>
@@ -124,6 +144,8 @@
 	<string>
 	<SFML/System/String.inl>
 
+1429780453 em/String.inl>
+
 1429780453 c:\sfml-2.3.2\include\sfml\system\utf.hpp
 	<SFML/Config.hpp>
 	<algorithm>
@@ -131,6 +153,8 @@
 	<string>
 	<cstdlib>
 	<SFML/System/Utf.inl>
+
+1429780453 em/Utf.inl>
 
 1429780453 c:\sfml-2.3.2\include\sfml\system\utf.inl
 
@@ -141,6 +165,8 @@
 	<SFML/System/NonCopyable.hpp>
 	<cstdlib>
 	<SFML/System/Thread.inl>
+
+1429780453 em/Thread.inl>
 
 1429780453 c:\sfml-2.3.2\include\sfml\system\thread.inl
 
@@ -153,15 +179,21 @@
 	<SFML/System/ThreadLocal.hpp>
 	<SFML/System/ThreadLocalPtr.inl>
 
+1429780453 em/ThreadLocalPtr.inl>
+
 1429780453 c:\sfml-2.3.2\include\sfml\system\threadlocalptr.inl
 
 1429780453 c:\sfml-2.3.2\include\sfml\system\vector2.hpp
 	<SFML/System/Vector2.inl>
 
+1429780453 em/Vector2.inl>
+
 1429780453 c:\sfml-2.3.2\include\sfml\system\vector2.inl
 
 1429780453 c:\sfml-2.3.2\include\sfml\system\vector3.hpp
 	<SFML/System/Vector3.inl>
+
+1429780453 em/Vector3.inl>
 
 1429780453 c:\sfml-2.3.2\include\sfml\system\vector3.inl
 
@@ -177,6 +209,8 @@
 1429780453 c:\sfml-2.3.2\include\sfml\window\glresource.hpp
 	<SFML/Window/Export.hpp>
 
+1429780453 ow/Export.hpp>
+
 1429780453 c:\sfml-2.3.2\include\sfml\window\contextsettings.hpp
 
 1429780453 c:\sfml-2.3.2\include\sfml\window\event.hpp
@@ -186,9 +220,13 @@
 	<SFML/Window/Mouse.hpp>
 	<SFML/Window/Sensor.hpp>
 
+1429780453 ow/Sensor.hpp>
+
 1436034025 c:\sfml-2.3.2\include\sfml\window\joystick.hpp
 	<SFML/Window/Export.hpp>
 	<SFML/System/String.hpp>
+
+1429780453 em/String.hpp>
 
 1429780453 c:\sfml-2.3.2\include\sfml\window\keyboard.hpp
 	<SFML/Window/Export.hpp>
@@ -196,6 +234,8 @@
 1429780453 c:\sfml-2.3.2\include\sfml\window\mouse.hpp
 	<SFML/Window/Export.hpp>
 	<SFML/System/Vector2.hpp>
+
+1429780453 em/Vector2.hpp>
 
 1430987944 c:\sfml-2.3.2\include\sfml\window\sensor.hpp
 	<SFML/Window/Export.hpp>
@@ -230,12 +270,16 @@
 1429780453 c:\sfml-2.3.2\include\sfml\graphics\blendmode.hpp
 	<SFML/Graphics/Export.hpp>
 
+1430987944 hics/Export.hpp>
+
 1429780453 c:\sfml-2.3.2\include\sfml\graphics\export.hpp
 	<SFML/Config.hpp>
 
 1429780453 c:\sfml-2.3.2\include\sfml\graphics\circleshape.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Shape.hpp>
+
+1429780453 hics/Shape.hpp>
 
 1430987944 c:\sfml-2.3.2\include\sfml\graphics\shape.hpp
 	<SFML/Graphics/Export.hpp>
@@ -248,10 +292,14 @@
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/RenderStates.hpp>
 
+1429780453 hics/RenderStates.hpp>
+
 1436034025 c:\sfml-2.3.2\include\sfml\graphics\renderstates.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/BlendMode.hpp>
 	<SFML/Graphics/Transform.hpp>
+
+1429780453 hics/Transform.hpp>
 
 1429780453 c:\sfml-2.3.2\include\sfml\graphics\transform.hpp
 	<SFML/Graphics/Export.hpp>
@@ -262,6 +310,8 @@
 	<SFML/System/Vector2.hpp>
 	<algorithm>
 	<SFML/Graphics/Rect.inl>
+
+1429780453 hics/Rect.inl>
 
 1429780453 c:\sfml-2.3.2\include\sfml\graphics\rect.inl
 
@@ -307,10 +357,14 @@
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Rect.hpp>
 
+1430987944 hics/Rect.hpp>
+
 1441976890 c:\sfml-2.3.2\include\sfml\graphics\texture.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Image.hpp>
 	<SFML/Window/GlResource.hpp>
+
+1441976890 ow/GlResource.hpp>
 
 1430987944 c:\sfml-2.3.2\include\sfml\graphics\image.hpp
 	<SFML/Graphics/Export.hpp>
@@ -345,6 +399,8 @@
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Texture.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
+
+1429780453 hics/RenderTarget.hpp>
 
 1429780453 c:\sfml-2.3.2\include\sfml\graphics\renderwindow.hpp
 	<SFML/Graphics/Export.hpp>
@@ -398,6 +454,8 @@
 	<SFML/Audio/SoundSource.hpp>
 	<SFML/Audio/SoundStream.hpp>
 
+1429780453 o/SoundStream.hpp>
+
 1429780453 c:\sfml-2.3.2\include\sfml\audio\inputsoundfile.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
@@ -435,6 +493,8 @@
 
 1429780453 c:\sfml-2.3.2\include\sfml\audio\alresource.hpp
 	<SFML/Audio/Export.hpp>
+
+1429780453 o/Export.hpp>
 
 1429780453 c:\sfml-2.3.2\include\sfml\audio\outputsoundfile.hpp
 	<SFML/Audio/Export.hpp>
@@ -475,6 +535,8 @@
 	<vector>
 	<SFML/Audio/SoundFileFactory.inl>
 
+1429780453 o/SoundFileFactory.inl>
+
 1429780453 c:\sfml-2.3.2\include\sfml\audio\soundfilefactory.inl
 
 1429780453 c:\sfml-2.3.2\include\sfml\audio\soundfilereader.hpp
@@ -503,6 +565,8 @@
 1448902657 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/src/lista.cpp
 	"lista.hpp"
 
+1449436040 "
+
 1448902712 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/lista.hpp
 
 1449002519 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/src/Menu.cpp
@@ -514,13 +578,19 @@
 	"cScreen.hpp"
 	<SFML/Graphics.hpp>
 
+1449468148 hics.hpp>
+
 1448903061 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/src/screen_0.cpp
 	<iostream>
 	"screen_0.hpp"
 
+1448902743 hpp"
+
 1448902185 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/screen_0.hpp
 	<SFML/Graphics.hpp>
 	"cScreen.hpp"
+
+1448902185 pp"
 
 1449002499 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/cScreen.hpp
 	<SFML/Graphics.hpp>
@@ -553,6 +623,8 @@
 1448958895 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/Bloco.hpp
 	<SFML/Graphics.hpp>
 	"Buffer.hpp"
+
+1449465358 p"
 
 1448991764 /home/badboy/Dropbox/Projetos/ProjetoFinal/include/Buffer.hpp
 	<SFML/Graphics.hpp>
@@ -652,4 +724,464 @@
 	<SFML/Graphics.hpp>
 	<vector>
 	<stdio.h>
+
+1449358803 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/src/Bloco.cpp
+	"Bloco.hpp"
+
+1449426401 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/Bloco.hpp
+	<SFML/Graphics.hpp>
+	"Buff.hpp"
+
+1449358803 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/Buffer.hpp
+	<SFML/Graphics.hpp>
+	"Pilha.hpp"
+	"Lista.hpp"
+
+1449358565 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/Pilha.hpp
+	<iostream>
+
+1449358803 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/Lista.hpp
+	<iostream>
+	<list>
+
+1449358803 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/src/Buffer.cpp
+	"Buffer.hpp"
+
+1449422952 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/src/Menu.cpp
+	"Menu.hpp"
+	"Tela1.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+
+1449422356 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/Menu.hpp
+	"cScreen.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+
+1449422347 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/cScreen.hpp
+	<SFML/Graphics.hpp>
+
+1449435370 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/Tela1.hpp
+	"Pilha.hpp"
+	"Lista.hpp"
+	"Bloco.hpp"
+	"Tela.hpp"
+
+1449358565 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/Random.hpp
+
+1449358803 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/src/Random.cpp
+	"Random.hpp"
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1449426125 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/src/Tela1.cpp
+	"Tela1.hpp"
+	<iostream>
+	<SFML/Audio.hpp>
+	<string>
+	<sstream>
+
+1449434883 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/teste.cpp
+	"cScreen.hpp"
+	"Menu.hpp"
+	"Tela1.hpp"
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<vector>
+	<SFML/Graphics.hpp>
+	"Janela.hpp"
+	"Player.hpp"
+
+1449422875 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/src/Janela.cpp
+	"Janela.hpp"
+
+1449421699 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/Janela.hpp
+	<SFML/Graphics.hpp>
+	"Player.hpp"
+	<vector>
+
+1449420047 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/Player.hpp
+	<iostream>
+
+1449421818 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/src/Player.cpp
+	"Player.hpp"
+
+1449425241 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/Buff.hpp
+	<SFML/Graphics.hpp>
+	"Pilha.hpp"
+	"Lista.hpp"
+
+1449434846 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/src/Buff.cpp
+	"Buff.hpp"
+
+1449434661 source:/home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/src/Tela.cpp
+	"Tela.hpp"
+
+1449435351 /home/badboy/Dropbox/Projetos/ProjetoFinal/Projeto2.0/include/Tela.hpp
+	"cScreen.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"Random.hpp"
+	<iostream>
+
+1449369602 source:c:\users\edye_\desktop\projeto2.0\src\bloco.cpp
+	"Bloco.hpp"
+
+1449436076 c:\users\edye_\desktop\projeto2.0\include\bloco.hpp
+	<SFML/Graphics.hpp>
+	"Buff.hpp"
+
+1449436040 c:\users\edye_\desktop\projeto2.0\include\buff.hpp
+	<SFML/Graphics.hpp>
+	"Pilha.hpp"
+	"Lista.hpp"
+
+1449369364 c:\users\edye_\desktop\projeto2.0\include\pilha.hpp
+	<iostream>
+
+1449369602 c:\users\edye_\desktop\projeto2.0\include\lista.hpp
+	<iostream>
+	<list>
+
+1449466942 source:c:\users\edye_\desktop\projeto2.0\src\buff.cpp
+	"Buff.hpp"
+
+1449433674 source:c:\users\edye_\desktop\projeto2.0\src\janela.cpp
+	"Janela.hpp"
+
+1449432498 c:\users\edye_\desktop\projeto2.0\include\janela.hpp
+	<SFML/Graphics.hpp>
+	"Player.hpp"
+	<vector>
+
+1449430846 c:\users\edye_\desktop\projeto2.0\include\player.hpp
+	<iostream>
+
+1449465318 source:c:\users\edye_\desktop\projeto2.0\src\menu.cpp
+	"Menu.hpp"
+	"Tela1.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+
+1449465302 c:\users\edye_\desktop\projeto2.0\include\menu.hpp
+	"cScreen.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+
+1449462691 c:\users\edye_\desktop\projeto2.0\include\cscreen.hpp
+	<SFML/Graphics.hpp>
+	"Janela.hpp"
+
+1449464525 c:\users\edye_\desktop\projeto2.0\include\tela1.hpp
+	"Pilha.hpp"
+	"Lista.hpp"
+	"Bloco.hpp"
+	"Tela.hpp"
+
+1449462611 c:\users\edye_\desktop\projeto2.0\include\tela.hpp
+	"cScreen.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"Random.hpp"
+	"Janela.hpp"
+	<iostream>
+
+1449369364 c:\users\edye_\desktop\projeto2.0\include\random.hpp
+
+1449432618 source:c:\users\edye_\desktop\projeto2.0\src\player.cpp
+	"Player.hpp"
+
+1449369602 source:c:\users\edye_\desktop\projeto2.0\src\random.cpp
+	"Random.hpp"
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1449465358 source:c:\users\edye_\desktop\projeto2.0\teste.cpp
+	"cScreen.hpp"
+	"Menu.hpp"
+	"Tela1.hpp"
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<vector>
+	<SFML/Graphics.hpp>
+	"Janela.hpp"
+	"Player.hpp"
+
+1449468525 source:c:\users\edye_\desktop\projeto2.0\src\tela.cpp
+	"Tela.hpp"
+	<string>
+	<sstream>
+
+1449468358 source:c:\users\edye_\desktop\projeto2.0\src\tela1.cpp
+	"Tela1.hpp"
+	<iostream>
+	<SFML/Audio.hpp>
+	"Boss.hpp"
+
+1449468236 source:c:\users\edye_\desktop\projeto2.0\src\boss.cpp
+	"Boss.hpp"
+
+1449468148 c:\users\edye_\desktop\projeto2.0\include\boss.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1449521298 source:/home/lautter/projeto/src/Bloco.cpp
+	"Bloco.hpp"
+
+1449519520 /home/lautter/projeto/include/Bloco.hpp
+	<SFML/Graphics.hpp>
+	"Buff.hpp"
+
+1449521332 /home/lautter/projeto/include/Buff.hpp
+	<SFML/Graphics.hpp>
+	"Pilha.hpp"
+	"Lista.hpp"
+	"Player.hpp"
+
+1449369364 /home/lautter/projeto/include/Pilha.hpp
+	<iostream>
+
+1449516043 /home/lautter/projeto/include/Lista.hpp
+	<iostream>
+	<list>
+
+1449468636 source:/home/lautter/projeto/src/Boss.cpp
+	"Boss.hpp"
+
+1449468148 /home/lautter/projeto/include/Boss.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1449521337 source:/home/lautter/projeto/src/Buff.cpp
+	"Buff.hpp"
+
+1449433674 source:/home/lautter/projeto/src/Janela.cpp
+	"Janela.hpp"
+
+1449432498 /home/lautter/projeto/include/Janela.hpp
+	<SFML/Graphics.hpp>
+	"Player.hpp"
+	<vector>
+
+1449514756 /home/lautter/projeto/include/Player.hpp
+	<iostream>
+
+1449519354 source:/home/lautter/projeto/src/Menu.cpp
+	"Menu.hpp"
+	"Tela1.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+
+1449518799 /home/lautter/projeto/include/Menu.hpp
+	"cScreen.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"Player.hpp"
+
+1449462690 /home/lautter/projeto/include/cScreen.hpp
+	<SFML/Graphics.hpp>
+	"Janela.hpp"
+
+1449520206 /home/lautter/projeto/include/Tela1.hpp
+	"Pilha.hpp"
+	"Lista.hpp"
+	"Fila.hpp"
+	"Bloco.hpp"
+	"Tela.hpp"
+	"Buff.hpp"
+
+1449506161 /home/lautter/projeto/include/Tela.hpp
+	"cScreen.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"Random.hpp"
+	"Janela.hpp"
+	"Bola.hpp"
+	<iostream>
+
+1449369364 /home/lautter/projeto/include/Random.hpp
+
+1449510416 /home/lautter/projeto/include/Bola.hpp
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"Player.hpp"
+	"Lista.hpp"
+	"Fila.hpp"
+	"Pilha.hpp"
+	"Bloco.hpp"
+	"Buff.hpp"
+
+1449514793 source:/home/lautter/projeto/src/Player.cpp
+	"Player.hpp"
+
+1449369602 source:/home/lautter/projeto/src/Random.cpp
+	"Random.hpp"
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1449516671 /home/lautter/projeto/include/Fila.hpp
+	<iostream>
+	<queue>
+
+1449521306 source:/home/lautter/projeto/src/Bola.cpp
+	"Bola.hpp"
+
+1449512221 source:/home/lautter/projeto/src/Tela.cpp
+	"Tela.hpp"
+	<string>
+	<sstream>
+
+1449518272 source:/home/lautter/projeto/src/Tela1.cpp
+	"Tela1.hpp"
+	<iostream>
+	<SFML/Audio.hpp>
+	"Boss.hpp"
+
+1449512080 source:/home/lautter/projeto/teste.cpp
+	"cScreen.hpp"
+	"Menu.hpp"
+	"Tela1.hpp"
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<vector>
+	<SFML/Graphics.hpp>
+	"Janela.hpp"
+	"Player.hpp"
+
+1449503840 source:c:\users\edye_\desktop\projetofinal-master\src\bloco.cpp
+	"Bloco.hpp"
+
+1449503840 c:\users\edye_\desktop\projetofinal-master\include\bloco.hpp
+	<SFML/Graphics.hpp>
+	"Buff.hpp"
+
+1449503840 c:\users\edye_\desktop\projetofinal-master\include\buff.hpp
+	<SFML/Graphics.hpp>
+	"Pilha.hpp"
+	"Lista.hpp"
+	"Player.hpp"
+
+1449503840 c:\users\edye_\desktop\projetofinal-master\include\pilha.hpp
+	<iostream>
+
+1449503840 c:\users\edye_\desktop\projetofinal-master\include\lista.hpp
+	<iostream>
+	<list>
+
+1449503840 c:\users\edye_\desktop\projetofinal-master\include\player.hpp
+	<iostream>
+
+1449537123 source:c:\users\edye_\desktop\projetofinal-master\src\bola.cpp
+	"Bola.hpp"
+
+1449537111 c:\users\edye_\desktop\projetofinal-master\include\bola.hpp
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"Player.hpp"
+	"Lista.hpp"
+	"Fila.hpp"
+	"Pilha.hpp"
+	"Bloco.hpp"
+	"Buff.hpp"
+
+1449535328 c:\users\edye_\desktop\projetofinal-master\include\fila.hpp
+	<iostream>
+	<queue>
+
+1449503840 source:c:\users\edye_\desktop\projetofinal-master\src\boss.cpp
+	"Boss.hpp"
+
+1449503840 c:\users\edye_\desktop\projetofinal-master\include\boss.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1449528232 source:c:\users\edye_\desktop\projetofinal-master\src\buff.cpp
+	"Buff.hpp"
+
+1449542213 source:c:\users\edye_\desktop\projetofinal-master\src\janela.cpp
+	"Janela.hpp"
+
+1449539562 c:\users\edye_\desktop\projetofinal-master\include\janela.hpp
+	<SFML/Graphics.hpp>
+	"Player.hpp"
+	<vector>
+
+1449542859 source:c:\users\edye_\desktop\projetofinal-master\src\menu.cpp
+	"Menu.hpp"
+	"Tela1.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	<string>
+	<sstream>
+
+1449541587 c:\users\edye_\desktop\projetofinal-master\include\menu.hpp
+	"cScreen.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"Player.hpp"
+
+1449503840 c:\users\edye_\desktop\projetofinal-master\include\cscreen.hpp
+	<SFML/Graphics.hpp>
+	"Janela.hpp"
+
+1449534042 c:\users\edye_\desktop\projetofinal-master\include\tela1.hpp
+	"Pilha.hpp"
+	"Lista.hpp"
+	"Fila.hpp"
+	"Bloco.hpp"
+	"Tela.hpp"
+	"Buff.hpp"
+
+1449533619 c:\users\edye_\desktop\projetofinal-master\include\tela.hpp
+	"cScreen.hpp"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"Random.hpp"
+	"Janela.hpp"
+	"Bola.hpp"
+	<iostream>
+
+1449503840 c:\users\edye_\desktop\projetofinal-master\include\random.hpp
+
+1449542082 source:c:\users\edye_\desktop\projetofinal-master\src\player.cpp
+	"Player.hpp"
+
+1449503840 source:c:\users\edye_\desktop\projetofinal-master\src\random.cpp
+	"Random.hpp"
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1449533577 source:c:\users\edye_\desktop\projetofinal-master\src\tela.cpp
+	"Tela.hpp"
+	<string>
+	<sstream>
+
+1449542937 source:c:\users\edye_\desktop\projetofinal-master\src\tela1.cpp
+	"Tela1.hpp"
+	<iostream>
+	<SFML/Audio.hpp>
+	"Boss.hpp"
+
+1449542491 source:c:\users\edye_\desktop\projetofinal-master\teste.cpp
+	"cScreen.hpp"
+	"Menu.hpp"
+	"Tela1.hpp"
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<vector>
+	<SFML/Graphics.hpp>
+	"Janela.hpp"
+	"Player.hpp"
 

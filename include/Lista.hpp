@@ -1,8 +1,6 @@
 #ifndef LISTA_HPP
 #define LISTA_HPP
 #include <iostream>
-#include <list>
-#define Lista std::list
 
 #ifdef LISTA
 template<typename T>
@@ -170,5 +168,8 @@ T Lista<T>::getItem(int j){
         tmp=tmp->next;
     return tmp->data;
 }
+#else
+#include <list>
+#define Lista std::list
 #endif // LISTA
 #endif

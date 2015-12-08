@@ -4,7 +4,7 @@ Bloco::Bloco(const sf::Vector2f &size) : sf::RectangleShape(size)
 {
     life=1;
     type=1;
-    hasBuffer=false;
+    hasBuff=false;
 }
 
 Bloco::~Bloco()

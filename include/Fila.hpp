@@ -10,6 +10,7 @@
 #define FILA_HPP
 #include <iostream>
 
+#ifdef FILA
 template<typename F>
 class Fila{
 	protected:
@@ -193,6 +194,9 @@ bool Fila<F>::_duplica(){
 	this->capacidade*=2;
 	return true;
 }
-
+#else
+#include <queue>
+#define Fila std::queue
+#endif // MASTER
 
 #endif // FILA_HPP
